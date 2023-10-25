@@ -1,0 +1,29 @@
+<head>
+  <script>/* Any JavaScript here will be loaded for all users on every page load. */
+
+/* Replace missing images with Nothing.png -PatchouliSama */
+  var items = document.querySelectorAll(".gallerybox");
+  for (var i=0; i<items.length; i++)
+  {  
+    var node = items[i].querySelector(".thumb");
+    if (node.firstChild.nodeName == "#text") {
+      node.innerHTML = '<div style="margin:0px auto;"><img src="//static.miraheze.org/hoyodexwiki/thumb/3/33/Nothing.png/120px-Nothing.png" decoding="async" width="120" height="120" srcset="//static.miraheze.org/hoyodexwiki/thumb/3/33/Nothing.png/180px-Nothing.png 1.5x, //static.miraheze.org/hoyodexwiki/thumb/3/33/Nothing.png/240px-Nothing.png 2x"></div>'
+    }
+  }</script>
+</head>
+<body>
+  <script>
+fetch("https://hoyodex.miraheze.org/wiki/Herrscher")
+  .then(response => {
+    return response.text()
+  })
+  .then(data => {
+    document.querySelector("maincontent").innerHTML = data;
+  });
+  </script>
+
+
+  <maincontent>
+    
+  </maincontent>
+</body>
